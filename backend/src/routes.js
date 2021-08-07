@@ -3,15 +3,16 @@ import User from './app/models/User';
 
 const routes = new Router();
 
-routes.get('/user', async (req, res) => {
+routes.post('/user', async (req, res) => {
   const user = await User.create({
-    name: 'Fabbio Anderson',
-    email: 'fabio@uespi.br',
-    password_hash: '123456',
+    name: 'Carlos Eduardo',
+    nickname: 'CarlosEddie',
+    email: 'dudu_carlos.eduardo@hotmail.com.',
+    password_hash: '147852369',
   });
   res.json(user);
 });
 
-routes.get('/', (req, res) => res.json({ mensagem: 'helo world' }));
+routes.get('/', (req, res) => res.json({ mensagem: 'hello world' }));
 
 export default routes;

@@ -1,4 +1,4 @@
-/* const { password } = require('../../config/database'); */
+// const { password } = require('../../config/database');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -13,6 +13,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      nickname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -20,11 +24,6 @@ module.exports = {
       },
       password_hash: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      prestador_servico: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
         allowNull: false,
       },
       created_at: {
