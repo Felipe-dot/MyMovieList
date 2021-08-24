@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+header {
+    position: absolute;
+    width: 1440px;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+    background: #313D3E;
+}
+
+header img {
+    position: relative;
+    width: 140px;
+    height: 70px;
+    left: 135px;
+    top: 0px;
+}
+
+body {
+    background-color: #7A7B78;
+}
+
+footer {
+    position: absolute;
+    width: 1440px;
+    height: 199px;
+    left: -1px;
+    top: 828px;
+
+    background: #151819;
+}
+
+#back {
+    position: absolute;
+    width: 70px;
+    height: 27px;
+    left: 305px;
+    top: 22px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #D9AE52;
+}
+
+#bgImage {
+    position: absolute;
+    width: 1440px;
+    height: 758px;
+    left: 0px;
+    top: 70px
+}
+
+#login {
+    position: absolute;
+    height: 476px;
+    width: 369.74322509765625px;
+    left: 535px;
+    top: 181px;
+    border-radius: 30px;
+
+    background: #DFDCDC;
+
+}
+
+#login h2{
+    position: sticky;
+    width: 75.95px;
+    height: 30px;
+    left: 680.9px;
+    top: 211px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#email{
+    position: sticky;
+    width: 39.97px;
+    height: 19px;
+    left: 569.98px;
+    top: 271px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+}
+
+#password{
+    position: sticky;
+    width: 70.95px;
+    height: 19px;
+    left: 569.98px;
+    top: 410px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+}
+
+#txtEmail{
+    position: sticky;
+    width: 299.79px;
+    height: 45px;
+    left: 569.98px;
+    top: 305px;
+
+    background: #C4C4C4;
+    border-radius: 30px;
+}
+
+#txtPassword{
+    position: sticky;
+    width: 299.79px;
+    height: 45px;
+    left: 569.98px;
+    top: 444px;
+
+    background: #C4C4C4;
+    border-radius: 30px;
+}
+
+#btnLog{
+    position: sticky;
+    height: 48px;
+    width: 109.92366790771484px;
+    left: 594.95849609375px;
+    top: 549px;
+    border-radius: 30px;
+    background: #C4C4C4;
+}
+
+#btnLog p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #000000;
+}
+
+#btnSign {
+    position: sticky;
+    width: 99.93px;
+    height: 48px;
+    left: 734.86px;
+    top: 549px;
+
+    background: #C4C4C4;
+    border-radius: 30px;
+}
+
+#btnSign p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #000000;
+}
