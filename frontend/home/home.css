@@ -24,3 +24,25 @@ header button {
     top: 21px;
     border-radius: 30px;
 }
+
+#divBusca{
+    position: absolute;
+    width: 370px;
+    height: 35px;
+    left: 305px;
+    top: 18px;
+
+    background: #7A7B78;
+    border-radius: 30px;
+}
+  
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
+}
