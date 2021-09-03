@@ -52,7 +52,6 @@ function Home() {
             value={searchTerm} 
             onChange={handleOnChange}/>
         </form>
-        <a href="#">My List</a>
       </header>
       <div className="movie-container">
         {movies.length > 0 && movies.map((movie) => (

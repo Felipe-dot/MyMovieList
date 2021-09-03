@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Form.css';
 import FormSignup from './FormSignup';
 import FormLogin from '../login/FormLogin'
-import Home from '../home/index'
+import Logo from '../../assets/Logo.png'
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,8 +12,10 @@ const Form = () => {
   }
   return (
     <>
+      <header>
+        <img src={Logo} alt="logo"/>
+        </header>
       <div className='form-container'>
-        <span className='close-btn'>×</span>
         <div className='form-content-left'>
           <img className='form-img' src='img/bg2.svg' alt='movie theather seats' />
         </div>
