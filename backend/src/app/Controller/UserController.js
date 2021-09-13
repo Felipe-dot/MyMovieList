@@ -24,7 +24,7 @@ class UserController{
 
         const { id, nickname, email } = await user.update({ nickname: newNickname });
 
-        res.json({ id: req.userId, nickname: req.nickname });
+        return res.json({ id, nickname, email });
     }
 }
 

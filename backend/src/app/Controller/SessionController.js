@@ -20,7 +20,7 @@ class SessionController{
                 id,
                 nickname,
             },
-            token: jwt.sign({ id }, "text", {
+            token: jwt.sign({ id }, 'text', {
                 expiresIn: '7d',
             }),
         });

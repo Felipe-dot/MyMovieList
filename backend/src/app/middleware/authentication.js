@@ -10,7 +10,7 @@ const authentication = async (req, res, next) => {
     }
 
     try {
-        const decode = await jwt.verify(token, "text");
+        const decode = await jwt.verify(token, 'text');
         console.log(decode);
         req.userId = decode.id;
         req.nickname = decode.nickname;
