@@ -1,15 +1,20 @@
 import React from "react";
-import Home from "./pages/home"
-import Form from "./pages/sign-up/Form"
+import GlobalStyle from "./styles/global";
+import Login from "./pages/login";
+import { AutenticacaoProvider } from "./context/authentication";
+import Cadastro from './pages/sign-up'
 
 function App() {
   return (
     <>
-      <Form />
-      
-      {/* <Home /> */}
+      <GlobalStyle />
+      {/* <AutenticacaoProvider>
+        <Login />
+      </AutenticacaoProvider> */}
+
+      <Cadastro />
     </>
-  )
+  );
 }
 
 export default App;

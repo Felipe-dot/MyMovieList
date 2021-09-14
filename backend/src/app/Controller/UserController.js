@@ -23,7 +23,7 @@ class UserController {
     }
 
     if (!user.checkPassword(oldPassword)) {
-      return res.status(401).json({ mensagem: 'Invalid password' });
+      return res.status(401).json({ message: 'Invalid password' });
     }
 
     const { id, nickname, email } = await user.update({ password: newPassword });
