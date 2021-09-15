@@ -10,13 +10,13 @@ function App() {
     <>
       <GlobalStyle />
 
-      {/* <Cadastro /> */}
+      <Cadastro />
 
       {/* <AuthenticationProvider>
         <Login />
       </AuthenticationProvider> */}
 
-      <Home />
+      {/* <Home /> */}
 
     </>
   );

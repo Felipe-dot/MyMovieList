@@ -28,7 +28,7 @@ function SignUp() {
       const reponse = await api.post("user", {
         nickname: data.nickname,
         email: data.email,
-        password_hash: data.password_hash,
+        password: data.password_hash,
       });
       console.log(reponse.data);
     } catch (err) {
