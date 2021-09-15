@@ -4,7 +4,8 @@ import Input from "../../components/input";
 import { Form } from "@unform/web";
 import * as Yup from "yup";
 import api from "../../services/api";
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/Logo.png';
+import { Link } from 'react-router-dom';
 
 import { Container, FormContent, Image } from "./styles";
 
@@ -57,9 +58,9 @@ function SignUp() {
           <Input name="password_hash" type="password" placeholder="Password" />
           {/* <button type="submit">Cadastrar</button> */}
           <Button type="submit">Sign up</Button>
-          <a href="#">
+          <Link to='/'>
             Already have an account? Login here
-          </a>
+          </Link>
         </Form>
       </FormContent>
       <Image></Image>

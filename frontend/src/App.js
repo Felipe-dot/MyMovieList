@@ -1,23 +1,18 @@
-import React from "react";
-import GlobalStyle from "./styles/global";
-import Home from './pages/home'
-import Login from "./pages/login";
-import { AuthenticationProvider } from "./context/authentication";
-import Cadastro from './pages/sign-up'
+import React from 'react';
+import GlobalStyle from './styles/global';
+import { AuthenticationProvider } from './context/authentication';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes/index';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-
-      <Cadastro />
-
-      {/* <AuthenticationProvider>
-        <Login />
-      </AuthenticationProvider> */}
-
-      {/* <Home /> */}
-
+    <GlobalStyle />
+    <BrowserRouter>
+      <AuthenticationProvider>
+        <Routes></Routes>
+      </AuthenticationProvider>
+    </BrowserRouter>
     </>
   );
 }

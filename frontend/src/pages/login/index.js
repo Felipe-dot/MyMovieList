@@ -1,17 +1,19 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from 'react';
 import Logo from '../../assets/Logo.png';
-import Butao from "../../components/button";
-import Input from "../../components/input";
-import { Form } from "@unform/web";
-import * as Yup from "yup";
+import Butao from '../../components/button';
+import Input from '../../components/input';
+import { Form } from '@unform/web';
+import * as Yup from 'yup';
 import { UseContextAuthentication } from "../../context/authentication";
-/* import api from "../../services/api"; */
+import { Link, useHistory } from 'react-router-dom';
 
-import { Container, FormContent, Image } from "./styles";
+import { Container, FormContent, Image } from './styles';
 
 function Login() {
+  const [loginError, setLoginError] = useState("");
   const referenceForm = useRef(null);
   const { login } = UseContextAuthentication();
+  const history = useHistory();
 
   const submitForm = async (data) => {
     console.log(data);
@@ -26,22 +28,23 @@ function Login() {
         ),
       });
       await esquema.validate(data, { abortEarly: false });
-      login(data);
+      await login(data);
+      history.push('/home');
       /* const reponse = await api.post("login", {
         email: data.email,
         password: data.password,
       });
       console.log(reponse.data); */
     } catch (err) {
-      console.log("ok");
       if (err instanceof Yup.ValidationError) {
-        const erros = {};
+        const errors = {};
         err.inner.forEach((e) => {
-          erros[e.path] = e.message;
+          errors[e.path] = e.message;
         });
-        console.log(erros);
-        referenceForm.current?.setErrors(erros);
+        console.log(errors);
+        referenceForm.current?.setErrors(errors);
       }
+      setLoginError("Account does not exist")
     }
   };
 
@@ -58,12 +61,13 @@ function Login() {
           <Input name="password" type="password" placeholder="Password" />
           {/* <button type="submit">Cadastrar</button> */}
           <Butao type="submit">Login</Butao>
-          <a href="#">
+          <Link to='/sign-up'>
           Don't have an account? Sign-up here
-          </a>
+          </Link>
         </Form>
+        {!!loginError && window.alert(loginError)}
       </FormContent>
-      <Image></Image>
+      <Image/>
     </Container>
     </>
   );
