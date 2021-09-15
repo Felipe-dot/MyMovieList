@@ -1,27 +1,28 @@
 import React, { useRef } from "react";
+import Logo from '../../assets/Logo.png';
 import Butao from "../../components/button";
 import Input from "../../components/input";
 import { Form } from "@unform/web";
 import * as Yup from "yup";
-import { UseContextAutenticacao } from "../../context/authentication";
+import { UseContextAuthentication } from "../../context/authentication";
 /* import api from "../../services/api"; */
 
-import { Container, ConteudoFormulario, Figura } from "./styles";
+import { Container, FormContent, Image } from "./styles";
 
-function Cadastro() {
-  const formularioReferencia = useRef(null);
-  const { login } = UseContextAutenticacao();
+function Login() {
+  const referenceForm = useRef(null);
+  const { login } = UseContextAuthentication();
 
-  const submeterFormulario = async (data) => {
+  const submitForm = async (data) => {
     console.log(data);
     try {
       const esquema = Yup.object().shape({
         email: Yup.string()
-          .email("Email invalido")
-          .required("O email é obrigatorio"),
+          .email("Invalid email")
+          .required("Email required"),
         password: Yup.string().min(
           6,
-          "A senha deve ter no minimo 6 caracteres"
+          "Password must have at least 6 characters"
         ),
       });
       await esquema.validate(data, { abortEarly: false });
@@ -39,29 +40,33 @@ function Cadastro() {
           erros[e.path] = e.message;
         });
         console.log(erros);
-        formularioReferencia.current?.setErrors(erros);
+        referenceForm.current?.setErrors(erros);
       }
     }
   };
 
   return (
+    <>
+    <header>
+      <img src={Logo} alt="logo"/>
+    </header>
     <Container>
-      <ConteudoFormulario>
-        <h1> Bem Vindo</h1>
-        <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-          <p>Insira seus dados para realizar seu login</p>
+      <FormContent>
+        <h1> Login </h1>
+        <Form ref={referenceForm} onSubmit={submitForm}>
           <Input name="email" type="text" placeholder="Email" />
-          <Input name="password" type="password" placeholder="Senha" />
+          <Input name="password" type="password" placeholder="Password" />
           {/* <button type="submit">Cadastrar</button> */}
           <Butao type="submit">Login</Butao>
           <a href="#">
-            Não tem cadastro? Realize seu cadastro
+          Don't have an account? Sign-up here
           </a>
         </Form>
-      </ConteudoFormulario>
-      <Figura> Teste </Figura>
+      </FormContent>
+      <Image></Image>
     </Container>
+    </>
   );
 }
 
-export default Cadastro;
+export default Login;

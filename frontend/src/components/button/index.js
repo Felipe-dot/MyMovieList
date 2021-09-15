@@ -2,8 +2,8 @@ import React from "react";
 
 import { Container } from "./styles";
 
-function Butao({ children, ...rest }) {
+function Button({ children, ...rest }) {
   return <Container {...rest}>{children}</Container>;
 }
 
-export default Butao;
+export default Button;

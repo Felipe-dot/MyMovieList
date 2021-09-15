@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: stretch;
 `;
 
-export const ConteudoFormulario = styled.div`
+export const FormContent = styled.div`
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -16,7 +16,7 @@ export const ConteudoFormulario = styled.div`
   max-width: 500px;
   margin: 0 2rem;
   h1 {
-    color: #8c311c;
+    color: #ffffff;
     margin-bottom: 1rem;
   }
   form {
@@ -53,7 +53,7 @@ export const ConteudoFormulario = styled.div`
     } */
 
     a {
-      color: #d97b29;
+      color: #D9AE52;
       text-align: center;
       text-decoration: none;
       svg {
@@ -69,7 +69,7 @@ export const ConteudoFormulario = styled.div`
   }
 `;
 
-export const Figura = styled.div`
+export const Image = styled.div`
   flex: 1;
   background: url(${bgImg}) no-repeat center;
   background-size: cover;

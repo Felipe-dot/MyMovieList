@@ -1,18 +1,23 @@
 import React from "react";
 import GlobalStyle from "./styles/global";
+import Home from './pages/home'
 import Login from "./pages/login";
-import { AutenticacaoProvider } from "./context/authentication";
+import { AuthenticationProvider } from "./context/authentication";
 import Cadastro from './pages/sign-up'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      {/* <AutenticacaoProvider>
-        <Login />
-      </AutenticacaoProvider> */}
 
-      <Cadastro />
+      {/* <Cadastro /> */}
+
+      {/* <AuthenticationProvider>
+        <Login />
+      </AuthenticationProvider> */}
+
+      <Home />
+
     </>
   );
 }

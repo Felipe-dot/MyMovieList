@@ -6,7 +6,7 @@ import { Container, Error } from "./styles";
 const Input = ({ name, ...rest }) => {
   const referenciaInput = useRef(null);
   const [focus, setFocus] = useState(false);
-  const { fieldName, defaultValue, error, registerField } = useField(name);
+  const { fieldName, error, registerField } = useField(name);
 
   useEffect(() => {
     registerField({

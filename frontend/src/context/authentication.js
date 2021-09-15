@@ -1,9 +1,9 @@
 import React, { createContext, useContext } from "react";
 import api from "../services/api";
 
-const ContextoAutenticacao = createContext(null);
+const AuthenticationContext = createContext(null);
 
-export const AutenticacaoProvider = ({ children }) => {
+export const AuthenticationProvider = ({ children }) => {
   const login = async ({ email, password }) => {
     console.log("Ok");
     const response = await api.post("login", {
@@ -22,17 +22,16 @@ export const AutenticacaoProvider = ({ children }) => {
   };
 
   return (
-    <ContextoAutenticacao.Provider value={{ login, logoff }}>
-      <h1>meu contexto de autenticao</h1>
+    <AuthenticationContext.Provider value={{ login, logoff }}>
       {children}
-    </ContextoAutenticacao.Provider>
+    </AuthenticationContext.Provider>
   );
 };
 
-export function UseContextAutenticacao() {
-  const context = useContext(ContextoAutenticacao);
+export function UseContextAuthentication() {
+  const context = useContext(AuthenticationContext);
   if (!context) {
-    throw new Error("Não foi possivel usar o contexto");
+    throw new Error("could not use this context");
   }
 
   return context;

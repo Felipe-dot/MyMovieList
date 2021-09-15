@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-radius: 5px;
   padding: 1rem;
   ${(props) => {
-    if (props.temErro == true) {
+    if (props.hasError == true) {
       return css`
         border: 1px red solid;
         margin-bottom: 0;
@@ -21,7 +21,7 @@ export const Container = styled.div`
   ${(props) => {
     if (props.focus == true) {
       return css`
-        border-left: 0.3rem solid #8c311c;
+        border-left: 0.3rem solid #D9AE52;
       `;
     }
   }}
@@ -32,7 +32,7 @@ export const Container = styled.div`
     height: 100%;
     background: transparent;
     ::placeholder {
-      color: #8c311c;
+      color: gray;
     }
     :focus {
       outline: none;

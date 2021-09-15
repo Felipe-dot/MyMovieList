@@ -1,66 +1,71 @@
 import React, { useRef } from "react";
-import Butao from "../../components/button";
+import Button from "../../components/button";
 import Input from "../../components/input";
 import { Form } from "@unform/web";
 import * as Yup from "yup";
 import api from "../../services/api";
+import Logo from '../../assets/Logo.png'
 
-import { Container, ConteudoFormulario, Figura } from "./styles";
+import { Container, FormContent, Image } from "./styles";
 
-function Cadastro() {
-  const formularioReferencia = useRef(null);
+function SignUp() {
+  const referenceForm = useRef(null);
 
-  const submeterFormulario = async (data) => {
+  const submitForm = async (data) => {
     console.log(data);
     try {
       const esquema = Yup.object().shape({
-        name: Yup.string().required("O nome é obrigatorio"),
+        nickname: Yup.string().required("Nickname required"),
         email: Yup.string()
-          .email("Email invalido")
-          .required("O email é obrigatorio"),
+          .email("Invalid email")
+          .required("Email required"),
         password_hash: Yup.string().min(
           6,
-          "A senha deve ter no minimo 6 caracteres"
+          "Password must have at least 6 characters"
         ),
       });
       await esquema.validate(data, { abortEarly: false });
       const reponse = await api.post("user", {
-        name: data.name,
+        nickname: data.nickname,
         email: data.email,
         password_hash: data.password_hash,
       });
       console.log(reponse.data);
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
-        const erros = {};
+        const errors = {};
         err.inner.forEach((e) => {
-          erros[e.path] = e.message;
+          errors[e.path] = e.message;
         });
-        console.log(erros);
-        formularioReferencia.current?.setErrors(erros);
+        console.log(errors);
+        referenceForm.current?.setErrors(errors);
       }
     }
   };
 
   return (
+    <>
+    <header>
+      <img src={Logo} alt="logo"/>
+    </header>
     <Container>
-      <ConteudoFormulario>
-        <h1> Bem Vindo</h1>
-        <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-          <p>Insira seus dados para realizar o cadastro</p>
-          <Input name="name" type="text" placeholder="Nome Completo" />
+      <FormContent>
+        <h1> Create your account </h1>
+        <Form ref={referenceForm} onSubmit={submitForm}>
+          <Input name="nickname" type="text" placeholder="Nickname" />
           <Input name="email" type="text" placeholder="Email" />
-          <Input name="password_hash" type="password" placeholder="Senha" />
+          <Input name="password_hash" type="password" placeholder="Password" />
           {/* <button type="submit">Cadastrar</button> */}
-          <Butao type="submit">Cadastrar</Butao>
+          <Button type="submit">Sign up</Button>
           <a href="#">
-            Já tem cadastro? Realize seu login
+            Already have an account? Login here
           </a>
         </Form>
-      </ConteudoFormulario>
-      <Figura> Teste </Figura>
+      </FormContent>
+      <Image></Image>
     </Container>
+    </>
   );
 }
 
-export default Cadastro;
+export default SignUp;
