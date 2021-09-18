@@ -62,6 +62,18 @@ header a {
     padding: 0.5rem 1.5rem;
 }
 
+header h1 {
+    
+    text-decoration: none;
+    margin-top: 18px;
+    margin-bottom: 17px;
+    width: inherit;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: #D9AE52;
+    padding: 0.5rem 1.5rem;
+}
+
 .movie-container {
     justify-content: center;
     display: flex;

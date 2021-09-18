@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import bgImg from "../../assets/bg2.svg";
-import { shade } from "polished";
 
 export const Container = styled.div`
   height: 100vh;
@@ -26,31 +25,6 @@ export const FormContent = styled.div`
       margin-bottom: 1rem;
       margin-top: 1rem;
     }
-    /*   input {
-      background: #f2f2f2;
-      border: none;
-      border-radius: 4px;
-      border-left: 0.3rem solid #8c311c;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      ::placeholder {
-        color: #d97b29;
-      } 
-    }
-    /*     button {
-      background: #8c311c;
-      color: #fff;
-      border: none;
-      box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
-      border-radius: 4px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: ${shade(0.6, "#8c311c")};
-    } */
 
     a {
       color: #D9AE52;

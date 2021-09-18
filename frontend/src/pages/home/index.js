@@ -1,12 +1,14 @@
 import React from "react";
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/Logo.png';
 import Movie from "../../pages/home/movie";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+
 
 const APIURL =
-    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa612ddfc69ded8ae6ce3eeed7dbcdc2&page=1";
 const SEARCHAPI =
-    "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+    "https://api.themoviedb.org/3/search/movie?&api_key=aa612ddfc69ded8ae6ce3eeed7dbcdc2&query=";
 
 function Home() {
   const[movies, setMovies] = useState([]);
@@ -43,7 +45,7 @@ function Home() {
   return (
     <>
       <header>
-      <img src={Logo} alt="logo"/>
+       <img src={Logo} alt="logo"/>
         <form onSubmit={handleOnSubmit}>
           <input 
             className="search" 
@@ -52,6 +54,10 @@ function Home() {
             value={searchTerm} 
             onChange={handleOnChange}/>
         </form>
+        <h1>Hello, { localStorage.getItem("@aplicacao:user") }</h1>
+        <Link to='/' >
+          Log out
+        </Link>
       </header>
       <div className="movie-container">
         {movies.length > 0 && movies.map((movie) => (

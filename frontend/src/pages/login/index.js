@@ -30,11 +30,6 @@ function Login() {
       await esquema.validate(data, { abortEarly: false });
       await login(data);
       history.push('/home');
-      /* const reponse = await api.post("login", {
-        email: data.email,
-        password: data.password,
-      });
-      console.log(reponse.data); */
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = {};

@@ -32,6 +32,7 @@ function SignUp() {
         password: data.password_hash,
       });
       console.log(reponse.data);
+      window.alert('Account Created');
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = {};
