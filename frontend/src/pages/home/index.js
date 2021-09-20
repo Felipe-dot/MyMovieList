@@ -54,7 +54,7 @@ function Home() {
             value={searchTerm} 
             onChange={handleOnChange}/>
         </form>
-        <h1>Hello, { localStorage.getItem("@aplicacao:user") }</h1>
+        <h1>Hello, { localStorage.getItem("@aplication:user") }</h1>
         <Link to='/' >
           Log out
         </Link>
@@ -64,6 +64,7 @@ function Home() {
           <Movie key={movie.id} {...movie} />
         ))}
       </div>
+      <footer></footer>
     </>
   )
 }
