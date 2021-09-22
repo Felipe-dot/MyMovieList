@@ -12,13 +12,13 @@ export const AuthenticationProvider = ({ children }) => {
     });
     const { token, user } = response.data;
 
-    localStorage.setItem("@aplication:token", token);
-    localStorage.setItem("@aplication:user", JSON.stringify(user));
+    localStorage.setItem("@aplicacao:token", token);
+    localStorage.setItem("@aplicacao:user", JSON.stringify(user));
   };
 
   const logoff = () => {
-    localStorage.removeItem("@aplication:token");
-    localStorage.removeItem("@aplication:user");
+    localStorage.removeItem("@aplicacao:token");
+    localStorage.removeItem("@aplicacao:user");
   };
 
   return (

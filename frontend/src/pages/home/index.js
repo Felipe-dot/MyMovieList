@@ -41,7 +41,6 @@ function Home() {
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
   return (
     <>
       <header>
@@ -54,7 +53,7 @@ function Home() {
             value={searchTerm} 
             onChange={handleOnChange}/>
         </form>
-        <h1>Hello, { localStorage.getItem("@aplication:user") }</h1>
+        <h1>{localStorage.getItem("@aplicacao:user")}</h1>
         <Link to='/' >
           Log out
         </Link>
