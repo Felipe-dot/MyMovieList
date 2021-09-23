@@ -3,6 +3,7 @@ import Logo from '../../assets/Logo.png';
 import Movie from "../../pages/home/movie";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { UseContextAuthentication } from "../../context/authentication";
 
 
 const APIURL =
@@ -13,6 +14,7 @@ const SEARCHAPI =
 function Home() {
   const[movies, setMovies] = useState([]);
   const[searchTerm, setSearchTerm] = useState('');
+  const { logoff } = UseContextAuthentication();
 
   useEffect(() => {
     getMovies(APIURL);
@@ -54,7 +56,7 @@ function Home() {
             onChange={handleOnChange}/>
         </form>
         <h1>{localStorage.getItem("@aplicacao:user")}</h1>
-        <Link to='/' >
+        <Link to='/' onClick={logoff}>
           Log out
         </Link>
       </header>
