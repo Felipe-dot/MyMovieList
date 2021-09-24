@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import routes from './routes';
 import './database';
 
@@ -12,6 +13,7 @@ class App {
   middlewares() {
     // cadastrar todos os middlewares da aplicação
     this.server.use(express.json());
+    this.server.use(cors());
   }
 
   routes() {

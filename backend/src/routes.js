@@ -1,17 +1,19 @@
-import { Router } from 'express'; // importr apenas o Routers do express
-import User from './app/models/User';
+import { Router } from 'express';
+
+import UserController from './app/Controller/UserController';
+
+import SessionController from './app/Controller/SessionController';
+
+import authentication from './app/middleware/authentication';
 
 const routes = new Router();
 
-routes.post('/user', async (req, res) => {
-  const user = await User.create({
-    nickname: 'CarlosEddie',
-    email: 'dudu_carlos.eduardo@hotmail.com.',
-    password_hash: '147852369',
-  });
-  res.json(user);
-});
+routes.get('/', (req, res) => res.json({ messagem: 'Rota Raiz da Aplicação' }));
 
-routes.get('/', (req, res) => res.json({ mensagem: 'hello world' }));
+routes.post('/login', SessionController.store);
+routes.post('/user', UserController.store);
+
+routes.use(authentication);
+routes.put('/user', UserController.update);
 
 export default routes;
